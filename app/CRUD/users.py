@@ -1,5 +1,5 @@
-from fastapi import FastAPI,APIRouter,HTTPException,
-from
+from fastapi import FastAPI,APIRouter,HTTPException
+from .. import schema
 
 router = APIRouter(
     prefix= 'users/',
@@ -7,4 +7,5 @@ router = APIRouter(
 )
 
 @router('/')
-def CreateUser(user:)
+def CreateUser(user:schema.UserIn):
+    return user
