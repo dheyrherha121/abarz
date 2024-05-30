@@ -1,6 +1,6 @@
 from fastapi import FastAPI, status, HTTPException, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
-from .CRUD import products, users
+from .CRUD import products, users,login
 app = FastAPI()
 
 app.add_middleware(
@@ -12,6 +12,7 @@ app.add_middleware(
 )
 app.include_router(products.router)
 app.include_router(users.router)
+app.include_router(login.router)
 @app.get('')
 def index():
     return 'welcome'
